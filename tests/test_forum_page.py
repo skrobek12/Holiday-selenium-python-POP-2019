@@ -3,8 +3,7 @@ Test methods for ForumPage.
 """
 
 from pages.forum_page import ForumPage
-from tests.main_page_test_template import TestTemplate
-from time import sleep
+from tests.forum_page_test_template import TestTemplate
 
 
 class TestForumPage(TestTemplate):
@@ -20,11 +19,10 @@ class TestForumPage(TestTemplate):
     def test_title(self):
         """
         Test is checking if title of page is correct..
-        :return: "Forum-Forum Wakacje.pl"
+        :return: "Forum - Forum Wakacje.pl"
         """
         m = ForumPage(self.driver)
-        sleep(3)
-        assert m.check_title() == "Forum-Forum Wakacje.pl"
+        assert m.check_title() == "Forum - Forum Wakacje.pl"
 
     def test_page_is_scrollable(self):
         """
@@ -46,24 +44,11 @@ class TestForumPage(TestTemplate):
         m.clear_engine_placeholder()
         m.send_text_to_engine_placeholder()
         m.click_submit_search_button()
-        assert m.check_title() == "Search Results - Forum Wakacje.pl"
+        assert m.check_title() == "Search Result - Forum Wakacje.pl"
 
-    def test_sign_in(self):
-        """
-        Test is checking that sign in it works.
-        :return: True
-        """
-        c = ForumPage(self.driver)
-        c.click_sign_in()
-        c.click_username()
-        c.clear_username()
-        c.send_text_to_username()
-        c.click_password()
-        c.clear_password()
-        c.send_text_to_password()
-        c.click_submit()
-        c.click_user()
-        assert c.is_account_enabled() == True
+
+
+
 
 
 

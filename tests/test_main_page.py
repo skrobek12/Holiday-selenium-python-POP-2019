@@ -4,7 +4,7 @@ Test methods for MainPage.
 
 from pages.main_page import MainPage
 from tests.main_page_test_template import TestTemplate
-from time import sleep
+
 
 class TestMainPage(TestTemplate):
 
@@ -42,7 +42,6 @@ class TestMainPage(TestTemplate):
         k.scroll_down()
         k.click_location_dropdown_list()
         k.click_gniezno_dropdown_option()
-        sleep(4)
         assert k.find_office_email() == "gniezno@wakacje.pl"
 
 
@@ -60,9 +59,7 @@ class TestMainPage(TestTemplate):
         k.click_first_august()
         k.click_return()
         k.click_eight_august()
-        sleep(3)
         k.click_search()
-        sleep(4)
         assert k.is_grand_resort_enabled() == True
 
 

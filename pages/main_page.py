@@ -31,12 +31,8 @@ class MainPage(BasePage):
     _grand_resort = "//*[@id='__next']/div/div/main/div/div[3]/div[2]/section/div[1]/div[1]/article/div/div/div[2]/a/h2"
 
 
-
     def is_logo_enabled(self):
         return self._driver.find_element_by_xpath(self._logo).is_enabled()
-
-    def check_title(self):
-        return self._driver.title
 
     def is_footer_enabled(self):
         return self._driver.find_element_by_xpath(self._itaka_footer).is_enabled()

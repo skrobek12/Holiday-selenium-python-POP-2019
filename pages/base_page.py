@@ -10,3 +10,6 @@ class BasePage(object):
     def scroll_down(self):
         return self._driver.execute_script("window.scrollTo(0, 4000)")
 
+    def check_title(self):
+        return self._driver.title
+

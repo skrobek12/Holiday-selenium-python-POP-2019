@@ -10,7 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 class TestTemplate(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        self.driver.get("https://www.wakacje.pl/")
+        self.driver.get("https://www.wakacje.pl")
         self.driver.maximize_window()
         self.driver.implicitly_wait(3)
 
