@@ -36,7 +36,7 @@ class TestMainPage(TestTemplate):
     def test_search_regional_office(self):
         """
         Test will be checking search regional detail office
-        :return: "gniezno@wakacje.pl"
+        :return: "gniezno@zwakacje.pl"
         """
         k = MainPage(self.driver)
         k.scroll_down()
@@ -56,11 +56,11 @@ class TestMainPage(TestTemplate):
         k.click_hurghada()
         k.click_select()
         k.click_departure()
-        k.click_first_august()
+        k.click_first_november()
         k.click_return()
-        k.click_eight_august()
+        k.click_eight_november()
         k.click_search()
-        assert k.is_grand_resort_enabled() == True
+        assert k.is_minamark_resort_enabled() == True
 
 
 

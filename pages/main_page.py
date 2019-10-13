@@ -8,27 +8,27 @@ from pages.base_page import BasePage
 class MainPage(BasePage):
 
     # Locators test_logo_enabled
-    _logo = "//*[@id='__next']/div/div/header/figure"
+    _logo = "/html//div[@class='mainContainer']//a[@href='/']/img[@alt='wakacje.pl']"
 
     # Locators test_page_is_scrollable
-    _itaka_footer = "//*[@id='__next']/div/div/footer/div[3]/div[2]/a[1]"
+    _itaka_footer = "/html//div[@class='mainContainer']/div[@class='footer']//a[@href='/biuro/itaka/']"
 
     # Locators test_search_regional_office
-    _location_dropdown_list = "//*[@id='__next']/div/div/main/div/div[9]/div[2]/span/div/div/div"
-    _gniezno_dropdown_option = "//*[@id='__next']/div/div/main/div/div[9]/div[2]/span/div/div/ul/li[40]"
-    _office_email = "//*[@id='contactPok']/div[1]/div[2]/div/ul/li[2]/a"
+    _location_dropdown_list = "/html//span[@id='pokCitySelectBoxIt']"
+    _gniezno_dropdown_option = "//*[@id='39']/a"
+    _office_email = "/html//div[@id='contactPok']//ul[@class='contactList']//a[@href='mailto:gniezno@wakacje.pl']"
 
     # Locators test_search_offer
-    _hotel = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div/div/div/div/div"
-    _egypt = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]"
-    _hurghada = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/ul/li[2]/label/div"
-    _select = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div/div[3]/a"
-    _departure = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div/div[2]/input"
-    _first_august = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[3]/div[4]"
-    _return = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div/div[2]/input"
-    _eigth_august = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div/div[1]/div[2]/div/div/div[1]/div[3]/div[11]"
-    _search = "//*[@id='__next']/div/div/main/div/div[1]/div[2]/div[1]/div[2]/div[2]/a"
-    _grand_resort = "//*[@id='__next']/div/div/main/div/div[3]/div[2]/section/div[1]/div[1]/article/div/div/div[2]/a/h2"
+    _hotel = "//*[@id='countrySelectBoxItText']"
+    _egypt = "//*[@id='popularAll']/li[3]/label"
+    _hurghada = "//*[@id='countryCont-37']/li[3]/label"
+    _select = "//*[@id='directionsLbClose']"
+    _departure = "//*[@id='departureDate']"
+    _first_november = "//*[@id='ui-datepicker-div']/div[2]/table/tbody/tr[1]/td[5]/a"
+    _return = "//*[@id='arrivalDate']"
+    _eigth_november = "//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[2]/td[5]/a"
+    _search = "//*[@id='submitSearchBox']"
+    _minamark_resort = "//*[@id='promoOfferOuterCont']/div/div[1]/div/a/span[1]"
 
 
     def is_logo_enabled(self):
@@ -61,20 +61,20 @@ class MainPage(BasePage):
     def click_departure(self):
         return self._driver.find_element_by_xpath(self._departure).click()
 
-    def click_first_august(self):
-        return self._driver.find_element_by_xpath(self._first_august).click()
+    def click_first_november(self):
+        return self._driver.find_element_by_xpath(self._first_november).click()
 
     def click_return(self):
         return self._driver.find_element_by_xpath(self._return).click()
 
-    def click_eight_august(self):
-        return self._driver.find_element_by_xpath(self._eigth_august).click()
+    def click_eight_november(self):
+        return self._driver.find_element_by_xpath(self._eigth_november).click()
 
     def click_search(self):
         return self._driver.find_element_by_xpath(self._search).click()
 
-    def is_grand_resort_enabled(self):
-        return self._driver.find_element_by_xpath(self._grand_resort).is_enabled()
+    def is_minamark_resort_enabled(self):
+        return self._driver.find_element_by_xpath(self._minamark_resort).is_enabled()
 
 
 
